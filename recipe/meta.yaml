@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/c/conda-store/conda_store-{{ version }}.tar.gz
+  - url: https://pypi.io/packages/source/c/conda-store/conda-store-{{ version }}.tar.gz
     sha256: c644b5c709aaa6c66e3d3ca00f718bfb4cdb3a018ba9897de55c03cd091a5ee0
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda-store-server-{{ version }}.tar.gz
