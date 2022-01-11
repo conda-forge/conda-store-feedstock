@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.4" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda-store-{{ version }}.tar.gz
-    sha256: c644b5c709aaa6c66e3d3ca00f718bfb4cdb3a018ba9897de55c03cd091a5ee0
+    sha256: 2734f0b6bf1c3c819b5e36e4064b30ce46110ac988cdb9661c5ed4c889ed8497
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda-store-server-{{ version }}.tar.gz
-    sha256: a67172c9c3b34d8fb2e057fe9bc0d6c04be6f3c76c432ccb2de2af4206a43b35
+    sha256: b8d5602cd9f364c242563c1e2d5e4a8e426d5100dfd3a2ba74160c5dd663d25c
     folder: conda-store-server
 
 build:
@@ -52,7 +52,6 @@ outputs:
         - celery
         - flower
         - sqlalchemy
-        - psycopg2
         - requests
         - flask
         - flask-cors
