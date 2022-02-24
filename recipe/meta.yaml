@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "0.3.9" %}
+{% set version = "0.3.10" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda-store-{{ version }}.tar.gz
-    sha256: 6cd632ff0538e27376cc3c156f12d1cb75cf78687e33451e445e4a70faf49836
+    sha256: de3737d4a80adab4a4d9379eb6b68b9f1621464cd4a4f5802f54786232c465ff
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda-store-server-{{ version }}.tar.gz
-    sha256: fcf10e55f70130dac4aa0d4e342209dbfe34a00058d18fbf95566cbddf558dfc
+    sha256: 25867fce696a221699fb86091a8768fdc8207c5fd3e9e10659db78be32dc4ff7
     folder: conda-store-server
 
 build:
