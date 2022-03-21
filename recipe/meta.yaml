@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "0.3.11" %}
+{% set version = "0.3.12" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda-store-{{ version }}.tar.gz
-    sha256: db73953bd669f13f3f331606e30303e6ff14f503369233b7510d4795b8ce83d1
+    sha256: abd841a011597c59b679859bf84f5b9a2cb325ab3a513dbe4f719288fd5200cf
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda-store-server-{{ version }}.tar.gz
-    sha256: 3c84915332a628c3706a6ed7147f95dde8623e441ef905e15c56925010df7cc3
+    sha256: fa1eec4b22e18c7419aba2f169da78fc4ab9bd5315a2b56bf028ed7c3b213963
     folder: conda-store-server
 
 build:
@@ -61,6 +61,7 @@ outputs:
         - yarl
         - pyjwt
         - minio
+        - filelock
       run_constrained:
         - {{ pin_subpackage('conda-store', min_pin='x.x.x', max_pin='x.x.x') }}
 
