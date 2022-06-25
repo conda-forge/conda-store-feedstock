@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "0.3.15" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda-store-{{ version }}.tar.gz
-    sha256: 82c3c29c0cf5985766b3f4e9c07aa21caea1d4e8e6e723808826b90e919b16a5
+    sha256: 9e161af2fcfdd0c17c715a114f9459f65d2821e60bc8fe508d5c00f536f04661
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda-store-server-{{ version }}.tar.gz
-    sha256: b2ec50990e808e9c9edf552fae16e193d1926b9822eda96155e68c783624d9b8
+    sha256: 8b55acdc0aa04ad3ce8a38bf0b07ee13175c05435fa494e3d78996ed37971ff7
     folder: conda-store-server
 
 build:
@@ -24,17 +24,22 @@ outputs:
     script: "build_conda_store.sh"
     requirements:
       host:
-        - python >=3.6
+        - python >=3.7
         - pip
-        - jupyter-packaging
       run:
-        - python >=3.6
+        - python >=3.7
+        - rich
+        - click
+        - yarl
+        - aiohttp
       run_constrained:
         - {{ pin_subpackage('conda-store-server', min_pin='x.x.x', max_pin='x.x.x') }}
 
     test:
       imports:
         - conda_store
+      commands:
+        - conda-store
 
   - name: "conda-store-server"
     version: {{ version }}
@@ -43,10 +48,10 @@ outputs:
     script: "build_conda_store_server.sh"
     requirements:
       host:
-        - python >=3.6
+        - python >=3.7
         - pip
       run:
-        - python >=3.6
+        - python >=3.7
         - conda-docker
         - conda-pack
         - celery
