@@ -57,6 +57,7 @@ outputs:
         - celery
         - sqlalchemy
         - requests
+        - uvicorn
         - fastapi
         - pyyaml
         - redis-py
