@@ -39,7 +39,7 @@ outputs:
       imports:
         - conda_store
       commands:
-        - conda-store
+        - conda-store --help
 
   - name: "conda-store-server"
     version: {{ version }}
@@ -55,18 +55,20 @@ outputs:
         - conda-docker
         - conda-pack
         - celery
-        - flower
         - sqlalchemy
         - requests
-        - flask
-        - flask-cors
+        - fastapi
         - pyyaml
+        - redis-py
         - pydantic
-        - traitlets
-        - yarl
-        - pyjwt
         - minio
+        - traitlets
+        - pyjwt
+        - yarl
         - filelock
+        - itsdangerous
+        - jinja2
+        - python-multipart
       run_constrained:
         - {{ pin_subpackage('conda-store', min_pin='x.x.x', max_pin='x.x.x') }}
 
