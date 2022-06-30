@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "0.4.4" %}
+{% set version = "0.4.5" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda-store-{{ version }}.tar.gz
-    sha256: bdaeac0262864611ebd8248c6f33dcbe861e9521c811e86c4418864f35cc7dd2
+    sha256: dd6c5c8637d37a6a014a10f8a3c4fed888bdc6468827a87ca5f512bc873a55a5
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda-store-server-{{ version }}.tar.gz
-    sha256: dc51793af25f720a50516d34ccfed288200b70f01c81ca337cf8132b5eaf59ab
+    sha256: 5e764a06d041c7429fc0021390ab856a0a053cfce081ffccef6a8450636f0775
     folder: conda-store-server
 
 build:
@@ -27,11 +27,12 @@ outputs:
         - python >=3.7
         - pip
       run:
+        - aiohttp
+        - click
         - python >=3.7
         - rich
-        - click
+        - ruamel.yaml
         - yarl
-        - aiohttp
       run_constrained:
         - {{ pin_subpackage('conda-store-server', min_pin='x.x.x', max_pin='x.x.x') }}
 
@@ -51,25 +52,26 @@ outputs:
         - python >=3.7
         - pip
       run:
-        - python >=3.7
+        - alembic
+        - celery
         - conda-docker
         - conda-pack
-        - celery
-        - sqlalchemy
-        - requests
-        - uvicorn
         - fastapi
-        - pyyaml
-        - redis-py
-        - pydantic
-        - minio
-        - traitlets
-        - pyjwt
-        - yarl
         - filelock
         - itsdangerous
         - jinja2
+        - minio
+        - pydantic
+        - pyjwt
+        - python >=3.7
         - python-multipart
+        - pyyaml
+        - redis-py
+        - requests
+        - sqlalchemy
+        - traitlets
+        - uvicorn
+        - yarl
       run_constrained:
         - {{ pin_subpackage('conda-store', min_pin='x.x.x', max_pin='x.x.x') }}
 
