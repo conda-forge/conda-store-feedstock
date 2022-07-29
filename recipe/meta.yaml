@@ -99,5 +99,6 @@ about:
 extra:
   feedstock-name: conda-store
   recipe-maintainers:
+    - HarshCasper
     - costrouc
     - jaimergp
