@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "0.4.12" %}
+{% set version = "0.4.14" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda-store-{{ version }}.tar.gz
-    sha256: 9dbe6999eae53ef4ee4e76d1bc448e7e98a48f56c5269cce6e0773f8fabb8264
+    sha256: 020b75ae95a38b6a72bc84ed0616febd0ca95b2025648ccd8bdd7e40af9c6655
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda-store-server-{{ version }}.tar.gz
-    sha256: e3a88419646db4956a8ebbd8afc2d4743184b73059e7c18b342fa7d85832e3df
+    sha256: 30f43b57f006d2e9db5d94d5449413c64d4217cf66d9275c58f727f1b6413612
     folder: conda-store-server
 
 build:
@@ -24,12 +24,12 @@ outputs:
     script: build_conda_store.sh
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
         - aiohttp
         - click
-        - python >=3.7
+        - python >=3.8
         - rich
         - ruamel.yaml
         - yarl
@@ -49,7 +49,7 @@ outputs:
     script: build_conda_store_server.sh
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
         - alembic
@@ -63,7 +63,7 @@ outputs:
         - minio
         - pydantic
         - pyjwt
-        - python >=3.7
+        - python >=3.8
         - python-multipart
         - pyyaml
         - redis-py
@@ -99,6 +99,5 @@ about:
 extra:
   feedstock-name: conda-store
   recipe-maintainers:
-    - HarshCasper
     - costrouc
     - jaimergp
