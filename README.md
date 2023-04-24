@@ -1,11 +1,11 @@
-About conda-store
-=================
+About conda-store-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-store-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Quansight/conda-store
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-store-feedstock/blob/main/LICENSE.txt)
 
 Summary: Conda Environment Management, Builds, and Serve
 
@@ -154,7 +154,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@HarshCasper](https://github.com/HarshCasper/)
 * [@costrouc](https://github.com/costrouc/)
 * [@jaimergp](https://github.com/jaimergp/)
 
