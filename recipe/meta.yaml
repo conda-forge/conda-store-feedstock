@@ -54,7 +54,7 @@ outputs:
       run:
         - alembic
         - celery
-        - conda-docker # [linux]
+        - conda-docker  # [linux]
         - conda-pack
         - fastapi
         - filelock
