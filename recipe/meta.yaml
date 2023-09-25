@@ -55,6 +55,9 @@ outputs:
         - alembic
         - celery
         - conda-docker  # [linux]
+        - __linux  # [linux]
+        - __osx    # [osx]
+        - __win    # [win]  
         - conda-pack
         - fastapi
         - filelock
