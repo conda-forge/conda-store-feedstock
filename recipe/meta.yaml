@@ -61,7 +61,7 @@ outputs:
         - itsdangerous
         - jinja2
         - minio
-        - pydantic <2.0
+        - pydantic <2.0a0
         - pyjwt
         - python >=3.8
         - python-multipart
