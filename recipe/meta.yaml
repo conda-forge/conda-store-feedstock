@@ -46,6 +46,7 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
+      skip: true  # [not linux]
     script: build_conda_store_server.sh
     requirements:
       host:
@@ -54,6 +55,7 @@ outputs:
       run:
         - alembic
         - celery
+        - conda
         - conda-docker  # [linux]
         - __linux  # [linux]
         - __osx    # [osx]
