@@ -21,6 +21,7 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
+      skip: true  # [not linux]
     script: build_conda_store.sh
     requirements:
       host:
@@ -46,7 +47,6 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
-      skip: true  # [not linux]
     script: build_conda_store_server.sh
     requirements:
       host:
