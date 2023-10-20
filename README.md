@@ -156,4 +156,5 @@ Feedstock Maintainers
 
 * [@costrouc](https://github.com/costrouc/)
 * [@jaimergp](https://github.com/jaimergp/)
+* [@trallard](https://github.com/trallard/)
 
