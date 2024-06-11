@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "2024.1.1" %}
+{% set version = "2024.6.1" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda_store-{{ version }}.tar.gz
-    sha256: e3553df881c7e6ebbdd6389be311548d7cf6043cfb35c1d5bfc622df18406cf6
+    sha256: 0c253226ad9dac017dfc819a4d8f8fed0faa32c699c21f3a8b94330ebdfc9c64
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda_store_server-{{ version }}.tar.gz
-    sha256: 6808f8c657088de46b423be0dac9c032e754c3bf9eef6f0114c4e199e45cf0cf
+    sha256: 68d099037a84b20c30989c446d92c809ac294432aae000faaadd24159846c988
     folder: conda-store-server
 
 build:
@@ -59,7 +59,9 @@ outputs:
         - conda-docker  # [linux]
         - __linux  # [linux]
         - __osx    # [osx]
+        - conda-lock
         - conda-pack
+        - constructor
         - fastapi
         - filelock
         - itsdangerous
@@ -88,7 +90,7 @@ outputs:
         - conda-store-worker --help
 
 about:
-  home: https://github.com/Quansight/conda-store
+  home: https://github.com/conda-incubator/conda-store
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
@@ -98,12 +100,11 @@ about:
     philosophy of conda-store is to serve identical conda environments
     in as many ways as possible. Conda Store controls the environment
     lifecycle: management, builds, and serving of environments.
-  doc_url: https://conda-store.readthedocs.io/
-  dev_url: https://github.com/Quansight/conda-store
+  doc_url: https://conda.store/
+  dev_url: https://github.com/conda-incubator/conda-store
 
 extra:
   feedstock-name: conda-store
   recipe-maintainers:
     - trallard
-    - costrouc
     - jaimergp
