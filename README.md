@@ -1,27 +1,23 @@
-About conda-store-feedstock
-===========================
+# About conda-store-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-store-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/Quansight/conda-store
+Home: https://github.com/conda-incubator/conda-store
 
 Package license: BSD-3-Clause
 
 Summary: Conda Environment Management, Builds, and Serve
 
-Development: https://github.com/Quansight/conda-store
+Development: https://github.com/conda-incubator/conda-store
 
-Documentation: https://conda-store.readthedocs.io/
+Documentation: https://conda.store/
 
 End users think in terms of environments not packages. The core
 philosophy of conda-store is to serve identical conda environments
 in as many ways as possible. Conda Store controls the environment
 lifecycle: management, builds, and serving of environments.
 
-
-Current build status
-====================
-
+## Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
@@ -32,16 +28,14 @@ Current build status
   </tr>
 </table>
 
-Current release info
-====================
+## Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-conda--store-green.svg)](https://anaconda.org/conda-forge/conda-store) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/conda-store.svg)](https://anaconda.org/conda-forge/conda-store) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/conda-store.svg)](https://anaconda.org/conda-forge/conda-store) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/conda-store.svg)](https://anaconda.org/conda-forge/conda-store) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-conda--store--server-green.svg)](https://anaconda.org/conda-forge/conda-store-server) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/conda-store-server.svg)](https://anaconda.org/conda-forge/conda-store-server) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/conda-store-server.svg)](https://anaconda.org/conda-forge/conda-store-server) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/conda-store-server.svg)](https://anaconda.org/conda-forge/conda-store-server) |
 
-Installing conda-store
-======================
+## Installing conda-store
 
 Installing `conda-store` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
@@ -52,31 +46,31 @@ conda config --set channel_priority strict
 
 Once the `conda-forge` channel has been enabled, `conda-store, conda-store-server` can be installed with `conda`:
 
-```
+```bash
 conda install conda-store conda-store-server
 ```
 
 or with `mamba`:
 
-```
+```bash
 mamba install conda-store conda-store-server
 ```
 
 It is possible to list all of the versions of `conda-store` available on your platform with `conda`:
 
-```
+```bash
 conda search conda-store --channel conda-forge
 ```
 
 or with `mamba`:
 
-```
+```bash
 mamba search conda-store --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
-```
+```bash
 # Search all versions available on your platform:
 mamba repoquery search conda-store --channel conda-forge
 
@@ -87,12 +81,10 @@ mamba repoquery whoneeds conda-store --channel conda-forge
 mamba repoquery depends conda-store --channel conda-forge
 ```
 
-
-About conda-forge
-=================
+## About conda-forge
 
 [![Powered by
-NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
+NumFOCUS - NumFOCUS homepage](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -116,8 +108,7 @@ this feedstock's supporting files (e.g. the CI configuration files) with ``conda
 
 For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
-Terminology
-===========
+## Terminology
 
 **feedstock** - the conda recipe (raw material), supporting scripts and CI configuration.
 
@@ -128,9 +119,7 @@ Terminology
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
 
-
-Updating conda-store-feedstock
-==============================
+## Updating conda-store-feedstock
 
 If you would like to improve the conda-store recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
@@ -151,10 +140,8 @@ In order to produce a uniquely identifiable distribution:
    the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
-Feedstock Maintainers
-=====================
+## Feedstock Maintainers
 
-* [@costrouc](https://github.com/costrouc/)
 * [@jaimergp](https://github.com/jaimergp/)
 * [@trallard](https://github.com/trallard/)
-
+\
