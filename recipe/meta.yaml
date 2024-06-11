@@ -59,7 +59,9 @@ outputs:
         - conda-docker  # [linux]
         - __linux  # [linux]
         - __osx    # [osx]
+        - conda-lock
         - conda-pack
+        - constructor
         - fastapi
         - filelock
         - itsdangerous
