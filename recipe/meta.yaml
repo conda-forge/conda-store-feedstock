@@ -14,7 +14,7 @@ source:
     folder: conda-store-server
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: conda-store
