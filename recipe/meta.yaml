@@ -14,21 +14,25 @@ source:
     folder: conda-store-server
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: conda-store
     version: {{ version }}
     build:
       noarch: python
-      skip: true  # [not linux]
     script: build_conda_store.sh
     requirements:
       host:
         - python >=3.8
         - pip
+        - hatchling >=1.14.0
+        - hatch-vcs
       run:
-        - aiohttp
+        - __linux  # [linux]
+        - __osx    # [osx]
+        - __win    # [win]
+        - aiohttp>=3.8.1
         - click
         - python >=3.8
         - rich
@@ -52,6 +56,8 @@ outputs:
       host:
         - python >=3.8
         - pip
+        - hatchling >=1.14.0
+        - hatch-vcs
       run:
         - alembic
         - celery
