@@ -3,15 +3,15 @@ About conda-store-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-store-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/Quansight/conda-store
+Home: https://github.com/conda-incubator/conda-store
 
 Package license: BSD-3-Clause
 
 Summary: Conda Environment Management, Builds, and Serve
 
-Development: https://github.com/Quansight/conda-store
+Development: https://github.com/conda-incubator/conda-store
 
-Documentation: https://conda-store.readthedocs.io/
+Documentation: https://conda.store/
 
 End users think in terms of environments not packages. The core
 philosophy of conda-store is to serve identical conda environments
@@ -154,7 +154,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@costrouc](https://github.com/costrouc/)
 * [@jaimergp](https://github.com/jaimergp/)
 * [@trallard](https://github.com/trallard/)
 
