@@ -21,7 +21,7 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
-      script: build_conda_store.sh
+      script: python -m pip install ./conda-store -vv --no-deps --no-build-isolation --no-index
       entry_points:
           - conda-store = conda_store.__main__:main
     requirements:
@@ -53,7 +53,7 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
-      script: build_conda_store_server.sh
+      script: python -m pip install ./conda-store-server -vv --no-deps --no-build-isolation --no-index
       entry_points:
           - conda-store-server = conda_store_server._internal.server.__main__:main
           - conda-store-worker = conda_store_server._internal.worker.__main__:main
