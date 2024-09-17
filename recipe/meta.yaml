@@ -22,6 +22,8 @@ outputs:
     build:
       noarch: python
     script: build_conda_store.sh
+    entry_points:
+        - conda-store = conda_store.__main__:main
     requirements:
       host:
         - python >=3.8
@@ -52,6 +54,9 @@ outputs:
     build:
       noarch: python
     script: build_conda_store_server.sh
+    entry_points:
+        - conda-store-server = conda_store_server._internal.server.__main__:main
+        - conda-store-worker = conda_store_server._internal.worker.__main__:main
     requirements:
       host:
         - python >=3.8
