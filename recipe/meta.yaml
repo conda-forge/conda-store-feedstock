@@ -21,9 +21,9 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
-    script: build_conda_store.sh
-    entry_points:
-        - conda-store = conda_store.__main__:main
+      script: build_conda_store.sh
+      entry_points:
+          - conda-store = conda_store.__main__:main
     requirements:
       host:
         - python >=3.8
@@ -53,10 +53,10 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
-    script: build_conda_store_server.sh
-    entry_points:
-        - conda-store-server = conda_store_server._internal.server.__main__:main
-        - conda-store-worker = conda_store_server._internal.worker.__main__:main
+      script: build_conda_store_server.sh
+      entry_points:
+          - conda-store-server = conda_store_server._internal.server.__main__:main
+          - conda-store-worker = conda_store_server._internal.worker.__main__:main
     requirements:
       host:
         - python >=3.8
@@ -70,8 +70,9 @@ outputs:
         - conda-docker  # [linux]
         - __linux  # [linux]
         - __osx    # [osx]
-        - conda-lock
+        - __win    # [win]
         - conda-pack
+        - conda-lock
         - constructor
         - fastapi
         - filelock
@@ -86,10 +87,12 @@ outputs:
         - pyyaml
         - redis-py
         - requests
-        - sqlalchemy
+        - sqlalchemy <2.0a0
         - traitlets
         - uvicorn
         - yarl
+        - psycopg2
+        - pymysql
       run_constrained:
         - {{ pin_subpackage('conda-store', min_pin='x.x.x', max_pin='x.x.x') }}
 
