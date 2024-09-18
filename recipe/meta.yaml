@@ -14,21 +14,27 @@ source:
     folder: conda-store-server
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: conda-store
     version: {{ version }}
     build:
       noarch: python
-      skip: true  # [not linux]
-    script: build_conda_store.sh
+      script: python -m pip install ./conda-store -vv --no-deps --no-build-isolation --no-index
+      entry_points:
+          - conda-store = conda_store.__main__:main
     requirements:
       host:
         - python >=3.8
         - pip
+        - hatchling >=1.14.0
+        - hatch-vcs
       run:
-        - aiohttp
+        - __linux  # [linux]
+        - __osx    # [osx]
+        - __win    # [win]
+        - aiohttp >=3.8.1
         - click
         - python >=3.8
         - rich
@@ -47,11 +53,16 @@ outputs:
     version: {{ version }}
     build:
       noarch: python
-    script: build_conda_store_server.sh
+      script: python -m pip install ./conda-store-server -vv --no-deps --no-build-isolation --no-index
+      entry_points:
+          - conda-store-server = conda_store_server.server.__main__:main
+          - conda-store-worker = conda_store_server.worker.__main__:main
     requirements:
       host:
         - python >=3.8
         - pip
+        - hatchling >=1.14.0
+        - hatch-vcs
       run:
         - alembic
         - celery
@@ -59,8 +70,9 @@ outputs:
         - conda-docker  # [linux]
         - __linux  # [linux]
         - __osx    # [osx]
-        - conda-lock
+        - __win    # [win]
         - conda-pack
+        - conda-lock
         - constructor
         - fastapi
         - filelock
@@ -75,10 +87,12 @@ outputs:
         - pyyaml
         - redis-py
         - requests
-        - sqlalchemy
+        - sqlalchemy <2.0a0
         - traitlets
         - uvicorn
         - yarl
+        - psycopg2
+        - pymysql
       run_constrained:
         - {{ pin_subpackage('conda-store', min_pin='x.x.x', max_pin='x.x.x') }}
 
