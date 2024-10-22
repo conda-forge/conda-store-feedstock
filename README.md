@@ -155,5 +155,7 @@ Feedstock Maintainers
 =====================
 
 * [@jaimergp](https://github.com/jaimergp/)
+* [@peytondmurray](https://github.com/peytondmurray/)
+* [@soapy1](https://github.com/soapy1/)
 * [@trallard](https://github.com/trallard/)
 
