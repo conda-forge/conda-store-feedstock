@@ -120,5 +120,6 @@ about:
 extra:
   feedstock-name: conda-store
   recipe-maintainers:
+    - soapy1
     - trallard
     - jaimergp
