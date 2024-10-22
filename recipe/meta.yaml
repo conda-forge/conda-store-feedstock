@@ -120,6 +120,7 @@ about:
 extra:
   feedstock-name: conda-store
   recipe-maintainers:
+    - peytondmurray
     - soapy1
     - trallard
     - jaimergp
