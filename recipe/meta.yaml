@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "2024.10.1" %}
+{% set version = "2024.11.1" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/conda-store/conda_store-{{ version }}.tar.gz
-    sha256: 2b2c5039776d299f14af48739701def9bfc3764f67f1b7335ae9f9d88cc52fc0
+    sha256: 82205d1056d16b3ff770c4debc155c29d384a55a087f26328e329812d7e6ead9
     folder: conda-store
   - url: https://pypi.io/packages/source/c/conda-store-server/conda_store_server-{{ version }}.tar.gz
-    sha256: 61451e3893e8a109d7015dbedc4748691f59c11357f92ab2face5c0e66eef760
+    sha256: 753b18b99e426c5e2e551a5a0b8ae560fbbc1bd60ee28d59de08e5aea2c6c624
     folder: conda-store-server
 
 build:
@@ -23,7 +23,7 @@ outputs:
       noarch: python
       script: python -m pip install ./conda-store -vv --no-deps --no-build-isolation --no-index
       entry_points:
-          - conda-store = conda_store.__main__:main
+        - conda-store = conda_store.__main__:main
     requirements:
       host:
         - python >=3.8
@@ -55,8 +55,8 @@ outputs:
       noarch: python
       script: python -m pip install ./conda-store-server -vv --no-deps --no-build-isolation --no-index
       entry_points:
-          - conda-store-server = conda_store_server._internal.server.__main__:main
-          - conda-store-worker = conda_store_server._internal.worker.__main__:main
+        - conda-store-server = conda_store_server._internal.server.__main__:main
+        - conda-store-worker = conda_store_server._internal.worker.__main__:main
     requirements:
       host:
         - python >=3.8
