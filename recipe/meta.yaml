@@ -6,10 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/c/conda-store/conda_store-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/c/conda-store/conda_store-{{ version }}.tar.gz
     sha256: 82205d1056d16b3ff770c4debc155c29d384a55a087f26328e329812d7e6ead9
     folder: conda-store
-  - url: https://pypi.io/packages/source/c/conda-store-server/conda_store_server-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/c/conda-store-server/conda_store_server-{{ version }}.tar.gz
     sha256: 753b18b99e426c5e2e551a5a0b8ae560fbbc1bd60ee28d59de08e5aea2c6c624
     folder: conda-store-server
 
@@ -84,7 +84,7 @@ outputs:
         - python >=3.8
         - python-docker
         - python-multipart
-        - pyyaml
+        - pyyaml==5.3.1
         - redis-py
         - requests
         - sqlalchemy <2.0a0
