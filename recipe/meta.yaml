@@ -26,7 +26,7 @@ outputs:
         - conda-store = conda_store.__main__:main
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
         - hatchling >=1.14.0
         - hatch-vcs
@@ -36,7 +36,7 @@ outputs:
         - __win    # [win]
         - aiohttp >=3.8.1
         - click
-        - python >=3.8
+        - python >={{ python_min }}
         - rich
         - ruamel.yaml
         - yarl
@@ -59,7 +59,7 @@ outputs:
         - conda-store-worker = conda_store_server._internal.worker.__main__:main
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
         - hatchling >=1.14.0
         - hatch-vcs
@@ -81,7 +81,7 @@ outputs:
         - minio
         - pydantic <2.0a0
         - pyjwt
-        - python >=3.8
+        - python >={{ python_min }}
         - python-docker
         - python-multipart
         - pyyaml <=5.3.1
