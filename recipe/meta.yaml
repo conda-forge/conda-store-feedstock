@@ -1,5 +1,5 @@
 {% set name = "conda-store" %}
-{% set version = "2024.11.1" %}
+{% set version = "2024.11.2" %}
 {% set python_min = "3.10" %}
 
 
@@ -9,10 +9,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/c/conda-store/conda_store-{{ version }}.tar.gz
-    sha256: 82205d1056d16b3ff770c4debc155c29d384a55a087f26328e329812d7e6ead9
+    sha256: e3257e417e16229523d4814896d9b0386552d4834d6e8bc18d5325848fcc08cb
     folder: conda-store
   - url: https://pypi.org/packages/source/c/conda-store-server/conda_store_server-{{ version }}.tar.gz
-    sha256: 753b18b99e426c5e2e551a5a0b8ae560fbbc1bd60ee28d59de08e5aea2c6c624
+    sha256: bf96d2a6e5d31884a3cb7b85940c034b8f2958242488979edb631f536bb75eee
     folder: conda-store-server
 
 build:
@@ -81,7 +81,7 @@ outputs:
         - itsdangerous
         - jinja2
         - minio
-        - pydantic <2.0a0
+        - pydantic >=2.0
         - pyjwt
         - python >={{ python_min }}
         - python-docker
@@ -89,7 +89,7 @@ outputs:
         - pyyaml >=6.0.1
         - redis-py
         - requests
-        - sqlalchemy <2.0a0
+        - sqlalchemy >=2.0
         - traitlets
         - uvicorn
         - yarl
