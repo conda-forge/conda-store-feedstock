@@ -89,7 +89,7 @@ outputs:
         - pyyaml >=6.0.1
         - redis-py
         - requests
-        - sqlalchemy >=2.0
+        - sqlalchemy >=2.0,<2.1
         - traitlets
         - uvicorn
         - yarl
