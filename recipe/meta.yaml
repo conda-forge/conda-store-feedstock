@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/c/conda-store/conda_store-{{ version }}.tar.gz
-    sha256: 9c82bc96529cf163410b40ee7ca06d8f15f0a48e57a05c2af605845a4e33ac21	
+    sha256: 9c82bc96529cf163410b40ee7ca06d8f15f0a48e57a05c2af605845a4e33ac21
     folder: conda-store
   - url: https://pypi.org/packages/source/c/conda-store-server/conda_store_server-{{ version }}.tar.gz
     sha256: f7cdd4916d9ead02d28909eb1553d76e9c3004dcccda9e01c19e6a5792013d39
@@ -48,6 +48,7 @@ outputs:
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - conda_store
       commands:
@@ -109,6 +110,7 @@ outputs:
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - conda_store_server
       commands:
